@@ -1,39 +1,35 @@
 # Omniauth::Plangrid
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/plangrid`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem contains the PlanGrid strategy for OmniAuth.
 
-TODO: Delete this and the text above, and describe your gem
+For more information see PlanGrids OAuth api: https://developer.plangrid.com
 
-## Installation
+How To Use It
+-------------
 
-Add this line to your application's Gemfile:
+You can pull them in directly from github e.g.:
+
+    gem "omniauth-plangrid", :git => "git://github.com/graveflex/omniauth-plangrid.git"
+
+>> Note: Gem will be published to rubygems soon.
+
+Once you've installed the Gem you need to add the following to your `config/initializers/omniauth.rb`:
 
 ```ruby
-gem 'omniauth-plangrid'
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :plan_grid, 'consumer_key', 'consumer_secret',  redirect_uri: "http://www.mysite.com/callback"
+    end
 ```
 
-And then execute:
+You will need input the oauth key and secret you received from PlanGrid. Also, be sure to include the redirect url that should be called once the strategy completes.
 
-    $ bundle
+After you have the gem running and the configuration is done, you can get to the follow url to log the user in:
 
-Or install it yourself as:
+  http://localhost:3000/auth/plangrid
 
-    $ gem install omniauth-plangrid
+For more details follow the README at: https://github.com/intridea/omniauth
 
-## Usage
+Questions
+---------
+If you have any questions or bugs to report please create an issue on this repo!
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/nickL/omniauth-plangrid.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
