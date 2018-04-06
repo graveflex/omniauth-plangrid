@@ -1,6 +1,6 @@
 # Omniauth::Plangrid
 
-This gem contains the PlanGrid strategy for OmniAuth.
+This gem contains a PlanGrid strategy for OmniAuth.
 
 For more information see PlanGrids OAuth api: https://developer.plangrid.com
 
@@ -9,7 +9,7 @@ How To Use It
 
 You can pull them in directly from github e.g.:
 
-    gem "omniauth-plangrid", :git => "git://github.com/graveflex/omniauth-plangrid.git"
+    gem "omniauth-plangrid", git: 'https://github.com/graveflex/omniauth-plangrid.git'
 
 >> Note: Gem will be published to rubygems soon.
 
